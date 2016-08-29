@@ -24473,6 +24473,14 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 	// --- END SVG METHODS -----------------------------------------------------
 
 } // END OF TCPDF CLASS
+class MYPDF extends TCPDF {
+    public function Header() {
+        $headerData = $this->getHeaderData();
+        //$this->SetFont('helvetica', 'B', 10);
+
+        $this->writeHTML('<div style="border-bottom:thin solid black;">'.$headerData['string'].'</div>');
+    }
+}
 
 //============================================================+
 // END OF FILE
